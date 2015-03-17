@@ -37,6 +37,13 @@ Class Usuario {
 	public function getPassword(){
 		return $this->password;
 	}
+	public function setPermisos($permisos){
+		$this->permisos = $permisos;
+	}
+
+	public function getPermisos(){
+		return $this->permisos;
+	}
 
 	public function setPassword($password){
 		$this->password = $password;
@@ -51,20 +58,21 @@ Class Usuario {
 	}
 	public function comprovarU($Lnombre,$Lpassword){
 		$usuariodb = new Usuariodb();
-		$pass = $usuariodb->buscarUsuario($Lnombre);
-		var_dump(md5($Lpassword));
-		var_dump($pass);
+		$pass = $usuariodb->buscarUsuario($Lnombre);		
 		if(md5($Lpassword)==$pass){
 			return true;
 		}else{
 			return false;
 		}
 	}
-
-	public function datosUsuario(){
+	public function datosUsuario($Lnombre){
 		$usuariodb = new Usuariodb();
-		$datosU = $usuariodb->buscarUsuario();
-		return $datosU;
+		$datosU = $usuariodb->datosUsuario($Lnombre);
+		$this ->setId($datosU[0]["id"]);
+		$this ->setPermisos($datosU[0]["permisos"]);
+		$this ->setNombre($datosU[0]["nombre"]);
+		$this ->setPassword($datosU[0]["password"]);
+		$this ->setEmail($datosU[0]["email"]);
 	}
 	
 } 

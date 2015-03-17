@@ -8,16 +8,27 @@ class Usuariodb {
     public function buscarUsuario($user) {
         $query = "select password from usuario where nombre = '".$user."'";
         $con = new class_db();
-        $temp = $con->consulta($query, $GLOBALS['bd']);
-        $con->close();      
-        return $temp[0]["password"];
+        try {
+            $temp = $con->consulta($query, $GLOBALS['bd']);
+            $con->close();
+            return $temp[0]["password"];
+        } catch (Exception $e) {
+            return false;
+        }
+              
+        
     }
     public function datosUsuario($user) {
         $query = "select id,permisos,nombre,password,email from usuario where nombre = '".$user."'";
         $con = new class_db();
-        $temp = $con->consulta($query, $GLOBALS['bd']);
-        $con->close();
-        return $temp;
+        try {
+            $temp = $con->consulta($query, $GLOBALS['bd']);
+            $con->close();
+            return $temp;
+        } catch (Exception $e) {
+            return $temp;
+        }
+        
     }
 
     public function queryArray($temp) {

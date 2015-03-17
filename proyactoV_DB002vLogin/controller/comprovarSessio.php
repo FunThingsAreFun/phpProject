@@ -1,8 +1,14 @@
 <?php
 session_start();
-if((isset($_SESSION['psw']))&&($_SESSION['user'])){	
+if(isset($_SESSION['usuario'])){
+
+
+$usuario = unserialize($_SESSION['usuario']);
+
+$nombre = $usuario->getNombre();
+
 	echo("Nom Usuari: ");
-	echo($_SESSION['user']);	
+	echo($nombre);	
 }else{
 	header('Location: ../view/error.php');
 	?>

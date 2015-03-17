@@ -1,0 +1,86 @@
+body{
+	border:solid black;
+	display: block;
+float: left;
+height:600px; 
+width:900px;
+position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+#login{
+display: block;
+float: left;
+background-color: #084B8A;
+border:solid black;
+position: absolute;
+color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+#MenuSuperior{
+display: block;
+float: left;
+height:60px; 
+width:900px;
+background-color: #084B8A;
+color: white;
+
+}
+#TancarSessio{
+display: block;
+float: right;
+}
+#form{
+display: block;
+float: left;
+border:solid black;
+position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+a:link {
+    text-decoration: underline;
+    color: white;
+}
+
+a:visited {
+    text-decoration: underline;
+    color: white;
+}
+#img{
+    height: 250px;
+    width: 250px;
+}
+tr.fila0 {
+    background-color: #F3E2A9;
+}
+
+tr.fila1 {
+    background-color: white;
+}
+#lista {
+    margin: 0 auto;
+    width: 400px;
+    height:483px;
+    overflow: scroll;
+}
+#lista #img{
+    height: 150px;
+    width: 150px;
+}
+#lista :link{
+    text-decoration: none;
+    color: black;
+}
+#lista :visited{
+    text-decoration: none;
+    color: black;
+}

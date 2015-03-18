@@ -7,7 +7,13 @@ require_once("/../../config/db.inc.php");
 class Obradb {
     public function inserir($obra) {
     	try {
+       /*   $dataF = date_create($obra->getDataFinal());
+          $dataI = date_create($obra->getDataInici());
+          $dataInici = date_format($dataI,"Y-m-d");
+          $dataFinal = date_format($dataF,"Y-m-d");
+          */
     	$query = "insert into obra values('','" . $obra->getNom() . "', '" . $obra->getDescripcio() . "', '" . $obra->getTipus() ."','".$obra->getDataInici()."','".$obra->getDataFinal()."','".$obra->getGenere()."','".$obra->getDirector()."','".$obra->getActorPrincipal()."');";
+        
         $con = new class_db();
         $con->insert($query, $GLOBALS['bd']);
         $con->close();

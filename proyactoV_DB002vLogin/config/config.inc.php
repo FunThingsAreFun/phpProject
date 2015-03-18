@@ -1,5 +1,5 @@
 <?php
 	$GLOBALS['server'] = "localhost";
 	$GLOBALS['USER']="root";
-	$GLOBALS['PASS']="Ikuchan19";   
+	$GLOBALS['PASS']="123465";   
 ?>

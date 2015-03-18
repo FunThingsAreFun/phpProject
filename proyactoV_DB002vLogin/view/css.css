@@ -1,4 +1,4 @@
-body{
+.container{
 	border:solid black;
 	display: block;
 float: left;
@@ -59,11 +59,11 @@ a:visited {
     height: 250px;
     width: 250px;
 }
-tr.fila0 {
+.fila0 {
     background-color: #F3E2A9;
 }
 
-tr.fila1 {
+.fila1 {
     background-color: white;
 }
 #lista {

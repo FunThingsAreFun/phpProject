@@ -2,7 +2,7 @@
 <header>
 	<link rel="stylesheet" title="css14" type="text/css" href="css.css"/>
 </header>
-<body>
+<body class="container">
 	<div id='MenuSuperior'>
 		<?php
 		function __autoload($class_name) {

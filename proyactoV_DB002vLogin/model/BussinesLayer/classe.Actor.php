@@ -54,5 +54,9 @@ Class Actor {
 	public function setFoto($foto){
 		$this->foto = $foto;
 	}
+	public function afegirActor() {
+        $ActorDb = new Actordb();
+        $ActorDb->inserir($this);
+    }
 } 
 ?>

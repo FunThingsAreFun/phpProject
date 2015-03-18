@@ -1,9 +1,7 @@
 <link rel="stylesheet" title="css14" type="text/css" href="css.css">
 <?php
 include('MenuSuperior.php');
-function __autoload($class_name) {
-	require_once "../model/BussinesLayer/classe.".$class_name.".php";
-}
+
 $agen = unserialize($_SESSION['Agen']);
 $totes=$agen->getActors();
 ?>

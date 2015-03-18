@@ -71,7 +71,7 @@ if($buit){
 }else{
 	$agen = unserialize($_SESSION['Agen']);
 	//TODO HACER QUE EL CERCAR OBRA SEA LLAMADO EN LA CLASE	
-	$aux = $agen->inserirtObra($_POST['nomObra'], $_POST['descripcioObra'], $_POST['tipus'], $dataIniciObra, $dataFinalObra, $_POST['generes'], $_POST['director'], $_POST['actor']);
+	$aux = $agen->insertObra($_POST['nomObra'], $_POST['descripcioObra'], $_POST['tipus'], $dataIniciObra, $dataFinalObra, $_POST['generes'], $_POST['director'], $_POST['actor']);
 	if($aux = 1){
 		$_SESSION['Agen']=serialize($agen);
 		header("Location: ../view/MenuInicial.php?execucio=1");

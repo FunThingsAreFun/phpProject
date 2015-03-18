@@ -33,5 +33,9 @@ Class Director {
 	public function setCognom($cognom){
 		$this->cognom = $cognom;
 	}
+	public function afegirDirector() {
+        $direDb = new Directordb();
+        $direDb->inserir($this);
+    }
 } 
 ?>

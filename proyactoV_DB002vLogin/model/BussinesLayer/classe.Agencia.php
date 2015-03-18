@@ -176,7 +176,7 @@ public function insertDirector($nif,$nom,$cognom){
 }
 public function insertObra($nombre, $descripcion, $tipo, $fechaInicio, $fechaFinal, $genere, $director, $actorPrincipal){
 	if($this->cercarObra($nombre)==0){
-		try {
+		try {			
 			$obra = new Obra($nombre, $descripcion, $tipo, $fechaInicio, $fechaFinal, $genere, $director, $actorPrincipal);
 			$id = $obra ->afegirObra();
 			//$this->populateObras();

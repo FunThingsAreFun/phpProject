@@ -12,11 +12,7 @@ Class Obra {
 	private $actorPrincipal;
 
 	function __construct($nom, $descripcio, $tipus, $dataInici, $dataFinal, $genere, $director, $actorPrincipal) {
-		$dataF = date_create($obra->getDataFinal());
-          $dataI = date_create($obra->getDataInici());
-          $dataInici = date_format($dataI,"Y-m-d");
-          $dataFinal = date_format($dataF,"Y-m-d");
-
+	
 		$this->nom = $nom;
 		$this->descripcio = $descripcio;
 		$this->tipus = $tipus;

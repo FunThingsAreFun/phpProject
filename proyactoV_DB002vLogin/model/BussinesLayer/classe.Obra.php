@@ -10,9 +10,11 @@ Class Obra {
 	private $genere;
 	private $director;
 	private $actorPrincipal;
+	private $actrizPrincipal;
+	private $actorSecundario;
+	private $actrizSecundaria;
 
-	function __construct($nom, $descripcio, $tipus, $dataInici, $dataFinal, $genere, $director, $actorPrincipal) {
-	
+	function __construct($nom, $descripcio, $tipus, $dataInici, $dataFinal, $genere, $director, $actorPrincipal, $actrizPrincipal, $actorSecundario, $actrizSecundaria) {
 		$this->nom = $nom;
 		$this->descripcio = $descripcio;
 		$this->tipus = $tipus;
@@ -21,14 +23,9 @@ Class Obra {
 		$this->genere = $genere;
 		$this->director = $director;
 		$this->actorPrincipal = $actorPrincipal;
-	}
-
-	public function getNom(){
-		return $this->nom;
-	}
-
-	public function setNom($nom){
-		$this->nom = $nom;
+		$this->actrizPrincipal = $actrizPrincipal;
+		$this->actorSecundario = $actorSecundario;
+		$this->actrizSecundaria = $actrizSecundaria;
 	}
 
 	public function getId(){
@@ -37,6 +34,14 @@ Class Obra {
 
 	public function setId($id){
 		$this->id = $id;
+	}
+
+	public function getNom(){
+		return $this->nom;
+	}
+
+	public function setNom($nom){
+		$this->nom = $nom;
 	}
 
 	public function getDescripcio(){
@@ -94,11 +99,35 @@ Class Obra {
 	public function setActorPrincipal($actorPrincipal){
 		$this->actorPrincipal = $actorPrincipal;
 	}
+
+	public function getActrizPrincipal(){
+		return $this->actrizPrincipal;
+	}
+
+	public function setActrizPrincipal($actrizPrincipal){
+		$this->actrizPrincipal = $actrizPrincipal;
+	}
+
+	public function getActorSecundario(){
+		return $this->actorSecundario;
+	}
+
+	public function setActorSecundario($actorSecundario){
+		$this->actorSecundario = $actorSecundario;
+	}
+
+	public function getActrizSecundaria(){
+		return $this->actrizSecundaria;
+	}
+
+	public function setActrizSecundaria($actrizSecundaria){
+		$this->actrizSecundaria = $actrizSecundaria;
+	}
+
      public function afegirObra() {
         $obraDb = new Obradb();
         $ayudame =$obraDb->inserir($this);
         return $ayudame;
     }
-
 } 
 ?>

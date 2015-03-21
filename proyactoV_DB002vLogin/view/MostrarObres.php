@@ -32,7 +32,7 @@ $totes=$agen->getObres();
 				<?php
 				echo("<a href='DadesObra.php?nom=".$totes[$i]->getNom()."'>".$totes[$i]->getNom()."</a>");
 				?>
-			</td>			
+			</td>
 			<td>
 				<?php
 				echo("<a>".$totes[$i]->getDescripcio()."</a>");
@@ -46,6 +46,21 @@ $totes=$agen->getObres();
 			<td>
 				<?php
 				echo("<a>".$totes[$i]->getActorPrincipal()."</a>");
+				?>
+			</td>
+			<td>
+				<?php
+				echo("<a>".$totes[$i]->getActrizPrincipal()."</a>");
+				?>
+			</td>
+			<td>
+				<?php
+				echo("<a>".$totes[$i]->getActorSecundario()."</a>");
+				?>
+			</td>
+			<td>
+				<?php
+				echo("<a>".$totes[$i]->getActrizSecundaria()."</a>");
 				?>
 			</td>
 		</tr>

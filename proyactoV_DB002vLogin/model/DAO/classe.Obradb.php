@@ -12,7 +12,7 @@ class Obradb {
           $dataInici = date_format($dataI,"Y-m-d");
           $dataFinal = date_format($dataF,"Y-m-d");
           */
-    	$query = "insert into obra values('','" . $obra->getNom() . "', '" . $obra->getDescripcio() . "', '" . $obra->getTipus() ."','".$obra->getDataInici()."','".$obra->getDataFinal()."','".$obra->getGenere()."','".$obra->getDirector()."','".$obra->getActorPrincipal()."');";
+    	$query = "insert into obra values('','" . $obra->getNom() . "', '" . $obra->getDescripcio() . "', '" . $obra->getTipus() ."','".$obra->getDataInici()."','".$obra->getDataFinal()."','".$obra->getGenere()."','".$obra->getDirector()."','".$obra->getActorPrincipal()."','".$obra->getActrizPrincipal."','".$obra->getActorSecundario."','".$obra->getActrizSecundaria."');";
         
         $con = new class_db();
         $con->insert($query, $GLOBALS['bd']);

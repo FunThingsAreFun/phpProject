@@ -87,6 +87,30 @@ if($agen->cercarObra($nom)>0){
 				?>
 			</td>
 		</tr>
+		<tr>
+			<td>Actor principal</td>
+			<td>
+				<?php
+				echo($agen->getActor($obra->getActrizPrincipal())->getNom());
+				?>
+			</td>
+		</tr>
+		<tr>
+			<td>Actor principal</td>
+			<td>
+				<?php
+				echo($agen->getActor($obra->getActorSecundario())->getNom());
+				?>
+			</td>
+		</tr>
+		<tr>
+			<td>Actor principal</td>
+			<td>
+				<?php
+				echo($agen->getActor($obra->getActrizSecundaria())->getNom());
+				?>
+			</td>
+		</tr>
 	</table>
 	<?php
 	} else {

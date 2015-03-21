@@ -47,7 +47,7 @@
 			<?php
 		}else{
 			$agen = unserialize($_SESSION['Agen']);
-			$aux = $agen->insertObra($_POST['nomObra'], $_POST['descripcioObra'], $_POST['tipus'], $dataIniciObra, $dataFinalObra, $_POST['generes'], $_POST['director'], $_POST['actor']);
+			$aux = $agen->insertObra($_POST['nomObra'], $_POST['descripcioObra'], $_POST['tipus'], $dataIniciObra, $dataFinalObra, $_POST['generes'], $_POST['director'], $_POST['actorPrincipal'], $_POST['actrizPrincipal'], $_POST['actorSecundario'], $_POST['actrizSecundaria']);
 			if($aux = 1){
 				$_SESSION['Agen']=serialize($agen);
 				header("Location: ../view/MenuInicial.php?execucio=1");
@@ -61,6 +61,6 @@
 		?>
 		<button type="button" onclick="location.href='../view/formObra.php'">tornar</button>
 
-</div>
+	</div>
 </body>
 </html>

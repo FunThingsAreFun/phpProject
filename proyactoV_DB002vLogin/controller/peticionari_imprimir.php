@@ -26,7 +26,7 @@ require('../model/BussinesLayer/PDFMCTable.php');
 $cod = 1;
    //Consultem les dades del peticionari
 
-    $sqlpeticionari  = "SELECT id, nom, descripcio, tipus, dataInici, dataFinal, genere, director, actorPrincipal FROM obra WHERE id = $cod ";
+    $sqlpeticionari  = "SELECT id, nom, descripcio, tipus, dataInici, dataFinal, genere, director, actorPrincipal, actrizPrincipal, actorSecundario, actrizSecundaria FROM obra WHERE id = $cod ";
 	
     $rpeticionari = $ConTut->Execute($sqlpeticionari) or die($ConTut->ErrorMsg());
 
@@ -40,6 +40,9 @@ $cod = 1;
         $adrfis    =$rpeticionari->Fields('genere');
         $pobfis    =$rpeticionari->Fields('director');
         $posfis    =$rpeticionari->Fields('actorPrincipal');
+        $actp      =$rpeticionari->Fields('actrizPrincipal');
+        $actsec    =$rpeticionari->Fields('actorSecundario');
+        $actsec2   =$rpeticionari->Fields('actrizSecundaria');
         
          // Recuperem les dades de la moneda
     //    $dades_mon = dades_moneda($nom, $ConTut);
@@ -61,9 +64,9 @@ function Header(){
         $this-> SetY(15);
         $this-> SetX(15);
 	$this->SetFont('Arial','B',16);
-	$this->Cell(110,5,'NOM OBRA',0,0,'L');
+	$this->Cell(110,5,'NOMBRE OBRA',0,0,'L');
 	$this->SetFont('Arial','',10);
-	$this->Cell(75,5,'Data i hora: '.date("d/m/Y G:i"),0,0,'R');
+	$this->Cell(75,5,'Fecha i hora: '.date("d/m/Y G:i"),0,0,'R');
 $this->Ln(15);
 $this->SetFont('Arial','B',14);
 $this->Cell(0,0,'FITXA DE OBRA');
@@ -72,7 +75,7 @@ $this->Ln(10);
             $this->SetWidths(array(15,35,15,115));            
             $this->SetAligns(array('L', 'L', 'L', 'L' ));
         //    $this->Row(array('Desc:', $GLOBALS['petcod'], 'Codi:', $GLOBALS['petnom']  ));	
-            $this->Row(array('Codi:', $GLOBALS['petnom']  ));  
+            $this->Row(array('Codigo:', $GLOBALS['petnom']  ));  
 }	
 
 function Footer() {
@@ -102,7 +105,7 @@ $pdf->SetBorders(2);
 $pdf->Ln(5);
 
 // Grup 1
-  $text= 'Dades Obra';
+  $text= 'Datos Obra';
   $pdf->SetFont('Arial','',11);
   $pdf->SetTextColor(255,255,255);
   $pdf->SetFillColor(192,192,192);
@@ -112,17 +115,17 @@ $pdf->Ln(5);
   $pdf->SetFont('Arial','',11);
   $pdf->SetWidths(array(60,120));            
   $pdf->SetAligns(array('L', 'L'));
-  $pdf->Row(array('Titol Obra:', $cnt));
+  $pdf->Row(array('Titulo Obra:', $cnt));
   $pdf->Ln(2);	
-  $pdf->Row(array('Descripcio:', $adr));	
+  $pdf->Row(array('Descripcion:', $adr));	
   $pdf->Ln(2);
-  $pdf->Row(array('Tipus:', $pob));	
+  $pdf->Row(array('Tipo:', $pob));	
   $pdf->Ln(2);
-   $pdf->Row(array('Genere:', $adrfis));  
+   $pdf->Row(array('Genero:', $adrfis));  
   $pdf->Ln(2);
-  $pdf->Row(array('Data Inici:', $pos));	
+  $pdf->Row(array('Fecha Inicio:', $pos));	
   $pdf->Ln(2);
-  $pdf->Row(array('Data Final:', $pro));  
+  $pdf->Row(array('FEcha Final:', $pro));  
   $pdf->Ln(2);
 
 $pdf->Ln(10);
@@ -131,7 +134,7 @@ $pdf->Ln(10);
   $pdf->SetFont('Arial','',11);
   $pdf->SetTextColor(255,255,255);
   $pdf->SetFillColor(192,192,192);
-  $pdf->Cell(190, 5, 'Repart principal', 0, 1, 'L', '1');
+  $pdf->Cell(190, 5, 'Reparto principal', 0, 1, 'L', '1');
   $pdf->Ln(3);
   $pdf->SetTextColor(0,0,0);
   $pdf->SetFont('Arial','',11);
@@ -140,8 +143,16 @@ $pdf->Ln(10);
   $pdf->Row(array('Director:', $pobfis));	
   $pdf->Ln(2);
   $pdf->Row(array('Actor Principal:', $posfis));	
+  $pdf->Ln(2);
+  $pdf->Row(array('Actor Principal:', $actp));
+  $pdf->Ln(2);
+  $pdf->Row(array('Actor Secundario:', $actesc));
+  $pdf->Ln(2);
+  $pdf->Row(array('Actriz Secundaria:', $actesc2)); 
   $pdf->Ln(10);
-  
+
+
+ 
   
   // Grup3
  /*   $pdf->SetFont('Arial','',11);

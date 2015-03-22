@@ -16,6 +16,8 @@
 		require_once "../model/BussinesLayer/classe.".$class_name.".php";
 	}*/
 	$agen = unserialize($_SESSION['Agen']);
+	$totsTipus=$agen->getGeneres();
+	$totsGeneres=$agen->getGeneres();
 	include('../model/Generes.php');
 	?>
 	<div id='form'>
@@ -34,7 +36,7 @@
 				<?php
 				for ($i=0; $i < count($totsTipus); $i++) { 
 					?>
-					<option value="<?php echo $totsTipus[$i]; ?>"><?php echo $totsTipus[$i]; ?></option>
+					<option value=<?php echo echo $agen->getTipus()[$i]->getNom(); ?>><?php echo $totsTipus[$i]->getNom(); ?></option>
 					<?php
 				}
 				?>
@@ -53,7 +55,7 @@
 				<?php
 				for ($i=0; $i < count($totsGeneres); $i++) { 
 					?>
-					<option value=<?php echo $totsGeneres[$i]; ?>><?php echo $totsGeneres[$i]; ?></option>
+					<option value=<?php echo $agen->getGeneres()[$i]->getNom(); ?>><?php echo $agen->getGeneres()[$i]->getNom(); ?></option>
 					<?php
 				}
 				?>

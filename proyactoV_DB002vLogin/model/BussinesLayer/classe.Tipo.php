@@ -23,5 +23,6 @@ Class Tipo {
 	public function setDescripcio($descripcio){
 		$this->descripcio = $descripcio;
 	}
+	
 }
 ?>

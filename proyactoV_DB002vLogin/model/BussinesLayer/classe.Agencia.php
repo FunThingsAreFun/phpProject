@@ -39,7 +39,7 @@ class Agencia{
 		$this->obres = $obres;
 	}
 		public function getTipus(){
-		return $this->otipus;
+		return $this->tipus;
 	}
 	public function setTipus($tipus){
 		$this->tipus = $tipus;
@@ -55,6 +55,8 @@ class Agencia{
 		$this->populateObras();
 		$this->populateActors();
 		$this->populateDirectors();
+		$this->populateGenere();
+		$this->populateTipus();
 	}
 
 	public function cercarActor($nif){
@@ -145,21 +147,24 @@ class Agencia{
 	}
 	function populateGenere() {	
 		$agenciadb = new Agenciadb();
-		$resultatConsulta = $agenciadb->query("generes");
+		$resultatConsulta = $agenciadb->query("genero");
 		$generes = $agenciadb->queryArray($resultatConsulta);
-		foreach($resultatConsulta as $var) {		
-			$VarS = new Director($var['nom'],$var['descripcio']);
-			array_push($this->generes, $VarS);
+		foreach($resultatConsulta as $var) {
+			$generoS = new Genero($var['nom'],$var['descripcio']);
+			
+			//array_push($this->generes, $generoS);
+			$generes[] = $generoS;
 		}
 		
 	}
 	function populateTipus() {	
 		$agenciadb = new Agenciadb();
-		$resultatConsulta = $agenciadb->query("tipus");
+		$resultatConsulta = $agenciadb->query("tipo");
 		$tipus = $agenciadb->queryArray($resultatConsulta);
 		foreach($resultatConsulta as $var) {		
-			$VarS = new Director($var['nom'],$var['descripcio']);
-			array_push($this->tipus, $VarS);
+			$tipoS = new Tipo($var['nom'],$var['descripcio']);
+			//array_push($this->tipus, $tipoS);
+			$tipos[]= $tipoS;
 		}
 		
 	}

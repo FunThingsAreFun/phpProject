@@ -33,7 +33,7 @@ class Agenciadb {
 public function query($table) {
     try {
         $query = "select * from ".$table."";
-        $con = new class_db();
+        $con = new class_db();        
         $temp = $con->consulta($query, $GLOBALS['bd']);
         $con->close();
         return $temp;

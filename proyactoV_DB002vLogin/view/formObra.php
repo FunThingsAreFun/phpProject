@@ -36,7 +36,7 @@
 				<?php
 				for ($i=0; $i < count($totsTipus); $i++) { 
 					?>
-					<option value=<?php echo echo $agen->getTipus()[$i]->getNom(); ?>><?php echo $totsTipus[$i]->getNom(); ?></option>
+					<option value=<?php echo $agen->getTipus()[$i]->getNom(); ?>><?php echo $agen->getTipus()[$i]->getNom(); ?></option>
 					<?php
 				}
 				?>

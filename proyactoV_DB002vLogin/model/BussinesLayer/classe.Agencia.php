@@ -15,6 +15,8 @@ class Agencia{
 		$this->actors = array();
 		$this->directors = array();
 		$this->obres = array();
+		$this->tipus = array();
+		$this->generes = array();
 	}
 	public function getActors(){
 		return $this->actors;
@@ -45,7 +47,7 @@ class Agencia{
 		$this->tipus = $tipus;
 	}
 		public function getGeneres(){
-		return $this->obres;
+		return $this->generes;
 	}
 	public function setGeneres($generes){
 		$this->generes = $generes;
@@ -153,7 +155,7 @@ class Agencia{
 			$generoS = new Genero($var['nom'],$var['descripcio']);
 			
 			//array_push($this->generes, $generoS);
-			$generes[] = $generoS;
+			$this->generes[] = $generoS;
 		}
 		
 	}
@@ -164,7 +166,7 @@ class Agencia{
 		foreach($resultatConsulta as $var) {		
 			$tipoS = new Tipo($var['nom'],$var['descripcio']);
 			//array_push($this->tipus, $tipoS);
-			$tipos[]= $tipoS;
+			$this->tipus[]= $tipoS;
 		}
 		
 	}

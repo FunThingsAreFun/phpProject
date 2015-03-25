@@ -34,7 +34,7 @@
 			Tipus
 			<select name="tipus">
 				<?php
-				for ($i=0; $i < count($totsTipus); $i++) { 
+				for ($i=0; $i < count($agen->getTipus()); $i++) { 
 					?>
 					<option value=<?php echo $agen->getTipus()[$i]->getNom(); ?>><?php echo $agen->getTipus()[$i]->getNom(); ?></option>
 					<?php
@@ -53,7 +53,7 @@
 			Genere
 			<select name="generes">
 				<?php
-				for ($i=0; $i < count($totsGeneres); $i++) { 
+				for ($i=0; $i < count($agen->getGeneres()); $i++) { 
 					?>
 					<option value=<?php echo $agen->getGeneres()[$i]->getNom(); ?>><?php echo $agen->getGeneres()[$i]->getNom(); ?></option>
 					<?php

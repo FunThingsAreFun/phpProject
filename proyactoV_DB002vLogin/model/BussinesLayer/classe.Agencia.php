@@ -198,7 +198,7 @@ class Agencia{
 			return null;
 		}
 	}
-	public function insertObra($nombre, $descripcion, $tipo, $fechaInicio, $fechaFinal, $genere, $director, $actorPrincipal){
+	public function insertObra($nombre, $descripcion, $tipo, $fechaInicio, $fechaFinal, $genere, $director, $actorPrincipal,$actrizPrincipal, $actorSecundario, $actrizSecundaria){
 		if($this->cercarObra($nombre)==0){
 			try {			
 				$obra = new Obra($nombre, $descripcion, $tipo, $fechaInicio, $fechaFinal, $genere, $director, $actorPrincipal, $actrizPrincipal, $actorSecundario, $actrizSecundaria);

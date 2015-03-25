@@ -45,7 +45,7 @@
 			?>
 			<button type="button" onclick="location.href='../view/formObra.php'">tornar</button>
 			<?php
-		}else{
+		}else{			
 			$agen = unserialize($_SESSION['Agen']);
 			$aux = $agen->insertObra($_POST['nomObra'], $_POST['descripcioObra'], $_POST['tipus'], $dataIniciObra, $dataFinalObra, $_POST['generes'], $_POST['director'], $_POST['actorPrincipal'], $_POST['actrizPrincipal'], $_POST['actorSecundario'], $_POST['actrizSecundaria']);
 			if($aux = 1){

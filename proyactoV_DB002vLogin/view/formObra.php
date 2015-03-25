@@ -3,9 +3,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<script language="JavaScript" type="text/JavaScript" src = "js/JSfuncions.js"></script>
-	<!-- <link rel="stylesheet" type="text/css" media="all" href="js/jscalendar/calendar-win2k-cold-1.css" title="win2k-cold-1" /> -->
+	<link rel="stylesheet" type="text/css" media="all" href="js/jscalendar/calendar-win2k-cold-1.css" title="win2k-cold-1" />
 	<link rel="stylesheet" title="css14" type="text/css" href="css.css" />
-	
 	<script type="text/javascript" src="js/jscalendar/calendar.js"></script>
 	<script type="text/javascript" src="js/jscalendar/lang/calendar-en.js"></script>
 	<script type="text/javascript" src="js/jscalendar/calendar-setup.js"></script> 
@@ -44,11 +43,11 @@
 			</select>
 			<br/>
 			Data Inici
-			<input type="text" name="dataInici" readonly="readonly" id="data1">
+			<input type="text" name="dataInici" id="data1">
 			<button type="reset" id="boto1">...</button>
 			<br/>
 			Data Final
-			<input type="text" name="dataFi" readonly="readonly" id="data2">
+			<input type="text" name="dataFi" id="data2">
 			<button type="reset" id="boto2">...</button>
 			<br/>
 			Genere

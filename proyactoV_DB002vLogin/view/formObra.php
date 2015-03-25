@@ -87,7 +87,8 @@
 				<?php
 				for ($i=0; $i < count($agen->getActors()); $i++) { 
 					?>
-					<option value=<?php echo $agen->getActors()[$i]->getNif(); ?>><?php echo $agen->getActors()[$i]->getNom(); ?></option>
+				<!-- 	<option value=<?php if($agen->getActors()[$i]->getSexe()=='D'){echo $agen->getActors()[$i]->getNif();} ?>><?php if($agen->getActors()[$i]->getSexe()=='D') {echo $agen->getActors()[$i]->getNom();} ?></option> -->
+				<option value=<?php echo $agen->getActors()[$i]->getNif(); ?>><?php echo $agen->getActors()[$i]->getNom(); ?></option> 
 					<?php
 				}
 				?>
@@ -123,7 +124,7 @@
 	<script type="text/javascript">
 		Calendar.setup({
 	        inputField     :    "data1",      // id of the input field
-	        ifFormat       :    "%Y-%m-%d",   // format of the input field
+	        ifFormat       :    "%d-%m-%Y",   // format of the input field
 	        showsTime      :    false,         // will display a time selector
 	        button         :    "boto1",      // trigger for the calendar (button ID)
 	        singleClick    :    false,        // double-click mode
@@ -131,7 +132,7 @@
 	    });
 		Calendar.setup({
 	        inputField     :    "data2",      // id of the input field
-	        ifFormat       :    "%Y-%m-%d",   // format of the input field
+	        ifFormat       :    "%d-%m-%Y",   // format of the input field
 	        showsTime      :    false,         // will display a time selector
 	        button         :    "boto2",      // trigger for the calendar (button ID)
 	        singleClick    :    false,        // double-click mode

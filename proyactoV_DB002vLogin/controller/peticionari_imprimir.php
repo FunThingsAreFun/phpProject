@@ -75,7 +75,7 @@ $this->Ln(10);
             $this->SetWidths(array(15,35,15,115));            
             $this->SetAligns(array('L', 'L', 'L', 'L' ));
         //    $this->Row(array('Desc:', $GLOBALS['petcod'], 'Codi:', $GLOBALS['petnom']  ));	
-            $this->Row(array('Codigo:', $GLOBALS['petnom']  ));  
+            $this->Row(array('ID:', $GLOBALS['petnom']  ));  
 }	
 
 function Footer() {
@@ -146,9 +146,9 @@ $pdf->Ln(10);
   $pdf->Ln(2);
   $pdf->Row(array('Actor Principal:', $actp));
   $pdf->Ln(2);
-  $pdf->Row(array('Actor Secundario:', $actesc));
+  $pdf->Row(array('Actor Secundario:', $actsec));
   $pdf->Ln(2);
-  $pdf->Row(array('Actriz Secundaria:', $actesc2)); 
+  $pdf->Row(array('Actriz Secundaria:', $actsec2)); 
   $pdf->Ln(10);
 
 

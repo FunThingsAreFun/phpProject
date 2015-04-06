@@ -1,4 +1,11 @@
 <html>
+
+<title>
+Agencia Nicolau
+</title>
+<meta name="Description" content="Pagina Web de la Agencia de Actores, Directores y Obras. Nicolau" >
+<meta name="Keywords" content="Actor,Agencia,Directores,Obras" >
+
 <header>
 	<link rel="stylesheet" title="css14" type="text/css" href="css.css"/>
 </header>

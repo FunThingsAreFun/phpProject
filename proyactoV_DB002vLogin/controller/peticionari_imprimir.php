@@ -19,11 +19,9 @@ define('FPDF_FONTPATH', '../fpdf/font/');
 // Classe pdf
 require('../model/BussinesLayer/PDFMCTable.php');
 
-// VENIM DE TRIAR EL PETICIONARI
-   //$cod = $_GET["id"]; OLGA
-  //$cod = $_GET['id_obra'];
 
-$cod = 1;
+$cod =$_GET['id'];
+
    //Consultem les dades del peticionari
 
     $sqlpeticionari  = "SELECT id, nom, descripcio, tipus, dataInici, dataFinal, genere, director, actorPrincipal, actrizPrincipal, actorSecundario, actrizSecundaria FROM obra WHERE id = $cod ";

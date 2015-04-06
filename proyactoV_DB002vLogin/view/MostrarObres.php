@@ -1,4 +1,11 @@
 <meta charset="UTF-8">
+<<html>
+<head>
+	<title>Mostrar Obres</title>
+</head>
+<body>
+
+
 <link rel="stylesheet" title="css14" type="text/css" href="css.css">
 <?php
 include('MenuSuperior.php');
@@ -63,6 +70,11 @@ $totes=$agen->getObres();
 				echo("<a>".$totes[$i]->getActrizSecundaria()."</a>");
 				?>
 			</td>
+			<td>
+				<?php				
+				echo("<img id ='img' src='../img/pdf.png' onclick='PdfFunc(".$totes[$i]->getId().")'>");
+				?>
+			</td>
 		</tr>
 		<?php
 		}
@@ -70,3 +82,11 @@ $totes=$agen->getObres();
 	</table>
 </div>
 <button type="button" onclick="location.href='../view/MenuInicial.php'">TORNAR</button>
+<script>
+function PdfFunc(id) {
+	var strin = "../controller/peticionari_imprimir.php?id="+id+"";
+    window.open(strin);
+}
+</script>
+</body>
+</html>

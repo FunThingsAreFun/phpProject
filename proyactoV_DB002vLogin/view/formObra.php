@@ -15,8 +15,7 @@
 		require_once "../model/BussinesLayer/classe.".$class_name.".php";
 	}*/
 	$agen = unserialize($_SESSION['Agen']);
-	$totsTipus=$agen->getGeneres();
-	$totsGeneres=$agen->getGeneres();
+	
 	include('../model/Generes.php');
 	?>
 	<div id='form'>

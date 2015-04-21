@@ -1,5 +1,7 @@
 <html>
-
+<head>
+<link rel="shortcut icon" type="image/jpg" href="../img/nicolas.jpg">
+</head>
 <title>
 Agencia Nicolau
 </title>
@@ -43,8 +45,11 @@ Agencia Nicolau
 			<a href="MenuInicial.php" onClick="return avisar();">Inici</a>
 			<?php
 			}
+
+
 		}
 		?>
+		<a href="Chat.php" onClick="return avisar();">SalaChat</a>
 	</div>
 </body>
 <script type="text/javascript">
